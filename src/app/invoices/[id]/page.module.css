@@ -1,0 +1,425 @@
+.container {
+    padding: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    animation: fadeIn 0.6s ease;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xl);
+}
+
+.backButton {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    transition: all 0.2s;
+}
+
+.backButton:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.printButton {
+    background: var(--color-primary);
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    color: #FFF;
+    box-shadow: var(--shadow-md);
+}
+
+.printButton:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+}
+
+.paper {
+    background: var(--color-surface);
+    padding: 4rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--color-border);
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2rem;
+}
+
+.businessName {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta p {
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.clientInfo {
+    text-align: right;
+}
+
+.clientInfo h3 {
+    font-size: 0.7rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+}
+
+.clientName {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.dressImage {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin: 2rem 0;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+
+.statusBanner {
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+    border-radius: 4px;
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+}
+
+.statusBanner.paid {
+    background: var(--color-success);
+    color: #FFF;
+}
+
+.statusBanner.pending {
+    background: var(--color-accent);
+    color: #FFF;
+}
+
+.statusBanner.partial {
+    background: #3b82f6;
+    color: #FFF;
+}
+
+.statusBanner.overdue {
+    background: var(--color-danger);
+    color: #FFF;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3rem 0;
+}
+
+.table th {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-primary);
+    padding: 1rem 0;
+}
+
+.table td {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #F3F1ED;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.right {
+    text-align: right;
+}
+
+.table tfoot tr td {
+    padding: 1rem 0;
+    font-weight: 600;
+}
+
+.balanceRow td {
+    border-top: 2px solid var(--color-primary);
+    padding-top: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    color: var(--color-primary);
+}
+
+.balanceRow td:first-child {
+    color: var(--color-accent);
+}
+
+.paymentsSection {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--color-border);
+}
+
+.paymentsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.paymentsHeader h3 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.addPaymentButton {
+    background: var(--color-accent);
+    color: #FFF;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(212, 160, 23, 0.2);
+}
+
+.paymentList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.paymentItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.25rem;
+    background: #FBFAF8;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+}
+
+.paymentItem span:first-child {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.paymentItem span:last-child {
+    font-weight: 800;
+    color: var(--color-success);
+}
+
+.noPayments {
+    color: var(--color-text-muted);
+    font-style: italic;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Payment Form */
+.paymentForm {
+    background: #FCFAF5;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-accent);
+    margin-bottom: 2rem;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.paymentForm h4 {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 0.875rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: #FFF;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.formActions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cancelButton {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.saveButton {
+    flex: 2;
+    background: var(--color-success);
+    color: #FFF;
+    border: none;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .paper {
+        padding: 2rem;
+    }
+
+    .header {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .clientInfo {
+        text-align: left;
+    }
+
+    .statusBanner {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .actions {
+        display: none;
+    }
+
+    .addPaymentButton {
+        display: none;
+    }
+
+    .paymentForm {
+        display: none;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .paper {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .statusBanner {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        box-shadow: none;
+        border: 1px solid #CCC;
+    }
+}

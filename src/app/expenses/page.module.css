@@ -1,0 +1,287 @@
+.container {
+    padding: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    animation: fadeIn 0.6s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: var(--spacing-xl);
+}
+
+.brandLabel {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.createButton {
+    background: var(--color-primary);
+    color: #FFF;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.createButton:hover {
+    background: var(--color-primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(38, 26, 21, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: var(--spacing-md);
+}
+
+.modal {
+    background: var(--color-bg);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 500px;
+    box-shadow: var(--shadow-premium);
+    border: 1px solid var(--color-border);
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modalHeader {
+    margin: -2.5rem -2.5rem 2rem -2.5rem;
+    height: 120px;
+    background-image: linear-gradient(to bottom, rgba(38, 26, 21, 0.4), rgba(38, 26, 21, 0.1)), url('/images/luxury/hero.png');
+    background-size: cover;
+    background-position: center 30%;
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+}
+
+.modal h2 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.formGroup {
+    margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin-bottom: 0.4rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.875rem;
+    background: #FFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: all 0.2s;
+    color: var(--color-text);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.1);
+}
+
+.formActions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.cancelButton {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.saveButton {
+    flex: 2;
+    background: var(--color-primary);
+    color: #FFF;
+    border: none;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.card {
+    background: var(--color-surface);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(rgba(252, 250, 247, 0.96), rgba(252, 250, 247, 0.98)), url('/images/luxury/expense.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+.cardMain {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent);
+    margin-bottom: 0.2rem;
+}
+
+.date {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.desc {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 0.1rem;
+}
+
+.amount {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.actions {
+    margin-left: var(--spacing-lg);
+    display: flex;
+    gap: 0.75rem;
+}
+
+.iconButton {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    transition: all 0.2s;
+}
+
+.iconButton:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+.emptyState {
+    background: var(--color-surface);
+    padding: 4rem 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-border);
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.primaryButton {
+    background: var(--color-accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow-md);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
