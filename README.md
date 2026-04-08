@@ -1,40 +1,67 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Couture Studio - Enterprise Management System
 
-## Getting Started
+A high-performance management system for fashion studios, featuring a Next.js admin dashboard, a Node.js/Express financial backend, and a Flutter mobile app for production and tailoring departments.
 
-First, run the development server:
+## Project Structure
+- `client/`: Next.js frontend (Admin & Management)
+- `server/`: Express.js backend (Financial & Production API)
+- `fashion_pro_mobile/`: Flutter mobile application (Department-specific)
 
+## 🚀 Getting Started
+
+### 1. Prerequisites
+- Node.js (v18+)
+- MySQL
+- Flutter (for mobile)
+
+### 2. Setup
+Clone the repository and install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run install:all
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Environment Configuration
+Copy `.env.example` to `.env` and configure your database and admin credentials:
+```env
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=couture_studio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ADMIN_EMAIL=manukato.twostones@gmail.com
+ADMIN_PASSWORD=your_admin_password
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Database Setup & Seeding
+Run the following scripts to initialize the database schema and seed the initial users:
+```bash
+# Update schema (roles and notifications)
+node scripts/migrate-db.js
 
-## Learn More
+# Seed Admin & Department accounts
+node scripts/seed-users.js
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 5. Running the System
+Start both the client and server concurrently:
+```bash
+npm run dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔑 Default Accounts (Seeded)
+| Department | Email | Password |
+| :--- | :--- | :--- |
+| **Admin** | `manukato.twostones@gmail.com` | (From .env) |
+| **Sales** | `sales@couture.com` | `password123` |
+| **Production** | `production@couture.com` | `password123` |
+| **Inventory** | `inventory@couture.com` | `password123` |
+| **Finance** | `finance@couture.com` | `password123` |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Features
+- **Integrated Auth**: Role-based access control (RBAC) across Web and Mobile.
+- **M-Pesa Automation**: Automated payment tracking from bank statements.
+- **Production Tracking**: Real-time updates on garment construction stages.
+- **Notification Engine**: cross-department alerts for streamlined workflows.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# financial-ops
->>>>>>> c9aeca0c231c1cdad0cd89e20275ab56e003b557
+## 📄 License
+Private Property of Manukato & Two Stones.

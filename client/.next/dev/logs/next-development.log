@@ -1,0 +1,19 @@
+[00:00:13.175] Server  WARN    ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:14.232] Server  LOG     ✓ Ready in 10.5s
+[00:00:38.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:42.394] Browser ERROR   Failed to refresh data: {}
+[00:00:43.534] Server  WARN    ⚠ Cross origin request detected from 192.168.0.119 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:43.861] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:44.203] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:44.853] Browser ERROR   Failed to refresh data: {}
+[00:00:45.916] Server  LOG     ○ Compiling /_not-found/page ...
+[00:00:54.183] Server  LOG     ○ Compiling /register ...
+[00:01:33.226] Browser ERROR   Failed to refresh data: {}
+[00:06:03.436] Server  LOG     ✓ Compiled in 5.3s
+[00:07:13.451] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:14.209] Browser ERROR   Failed to refresh data: {}
+[00:22:04.493] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:05.796] Browser ERROR   Failed to refresh data: {}
+[00:22:16.835] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:19.555] Browser ERROR   Failed to refresh data: {}

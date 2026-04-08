@@ -1,0 +1,115 @@
+/* [project]/client/src/components/Navbar.module.css [app-client] (css) */
+.Navbar-module__0uM72a__navbar {
+  background: var(--glass-bg);
+  width: 80px;
+  -webkit-backdrop-filter: var(--blur-md);
+  backdrop-filter: var(--blur-md);
+  border-right: 1px solid var(--color-border-thin);
+  padding: var(--spacing-md) 0;
+  z-index: 2000;
+  box-shadow: var(--shadow-sm);
+  flex-direction: column;
+  align-items: center;
+  transition: width .3s cubic-bezier(.16, 1, .3, 1);
+  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Navbar-module__0uM72a__navbar:hover {
+  width: 200px;
+  box-shadow: var(--shadow-md);
+  background: var(--color-surface);
+}
+
+.Navbar-module__0uM72a__navItem {
+  width: 100%;
+  color: var(--color-text-muted);
+  align-items: center;
+  padding: 1.25rem;
+  text-decoration: none;
+  transition: all .3s;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.Navbar-module__0uM72a__navItem span {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  white-space: nowrap;
+  opacity: 0;
+  margin-left: 1.5rem;
+  font-size: .75rem;
+  font-weight: 600;
+  transition: opacity .3s;
+}
+
+.Navbar-module__0uM72a__navbar:hover .Navbar-module__0uM72a__navItem span {
+  opacity: 1;
+}
+
+.Navbar-module__0uM72a__navItem svg {
+  min-width: 24px;
+  transition: transform .3s, color .3s;
+}
+
+.Navbar-module__0uM72a__navItem.Navbar-module__0uM72a__active {
+  color: var(--color-primary);
+}
+
+.Navbar-module__0uM72a__navItem:before {
+  content: "";
+  background: var(--color-accent);
+  opacity: 0;
+  width: 3px;
+  transition: opacity .3s;
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 0;
+}
+
+.Navbar-module__0uM72a__navItem.Navbar-module__0uM72a__active:before {
+  opacity: 1;
+}
+
+.Navbar-module__0uM72a__navItem.Navbar-module__0uM72a__active svg {
+  color: var(--color-accent);
+}
+
+.Navbar-module__0uM72a__navItem:hover svg {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .Navbar-module__0uM72a__navbar {
+    border-right: none;
+    border-top: 1px solid var(--color-border-thin);
+    flex-direction: row;
+    width: 100%;
+    height: 64px;
+    padding: 0;
+    top: auto;
+    bottom: 0;
+  }
+
+  .Navbar-module__0uM72a__navbar:hover {
+    width: 100%;
+  }
+
+  .Navbar-module__0uM72a__navItem {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .Navbar-module__0uM72a__navItem span {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=client_src_components_Navbar_module_css_bad6b30c._.single.css.map*/

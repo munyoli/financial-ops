@@ -3,6 +3,8 @@
 
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP TABLE IF EXISTS production_stages;
+DROP TABLE IF EXISTS production_orders;
 DROP TABLE IF EXISTS payments;
 DROP TABLE IF EXISTS invoices;
 DROP TABLE IF EXISTS quotes;
@@ -18,7 +20,7 @@ CREATE TABLE users (
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL,
-    role ENUM('admin', 'user') DEFAULT 'admin',
+    role ENUM('admin', 'sales', 'production', 'inventory', 'finance') DEFAULT 'admin',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -88,6 +90,44 @@ CREATE TABLE expenses (
     description TEXT,
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 7. Production Orders Table
+CREATE TABLE production_orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id VARCHAR(50) UNIQUE COMMENT 'Zoho-style reference (e.g., PRD-001)',
+    brand_id VARCHAR(50),
+    client_name VARCHAR(255) NOT NULL,
+    assigned_tailor VARCHAR(255),
+    current_status ENUM('cutting', 'sewing', 'finishing', 'qc', 'done') DEFAULT 'cutting',
+    progress_percentage DECIMAL(5,2) DEFAULT 0.00,
+    start_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    due_date DATE,
+    completed_date DATETIME,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- 8. Production Stages (Workflow History)
+CREATE TABLE production_stages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    production_order_id INT NOT NULL,
+    status ENUM('cutting', 'sewing', 'finishing', 'qc', 'done') NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    notes TEXT,
+    FOREIGN KEY (production_order_id) REFERENCES production_orders(id) ON DELETE CASCADE
+);
+
+-- 9. Notifications Table (Cross-Department Communication)
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT,
+    receiver_role ENUM('admin', 'sales', 'production', 'inventory', 'finance'),
+    title VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (sender_id) REFERENCES users(id) ON DELETE SET NULL
 );
 
 -- Initialize Default Settings

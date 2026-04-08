@@ -1,0 +1,209 @@
+.container {
+    padding: 2rem 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.brandLabel {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.createButton {
+    background: var(--color-text-primary);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.createButton:hover {
+    background: var(--color-accent);
+    transform: translateY(-1px);
+}
+
+.filters {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.filterChip {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.activeFilter {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+}
+
+.list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    border-color: var(--color-accent);
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardInfo {
+    flex: 1;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.quoteNumber {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.clientName {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.statusBadge {
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    color: white;
+    font-weight: 700;
+}
+
+.cardSub {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+}
+
+.itemTag {
+    padding-left: 1rem;
+    border-left: 1px solid var(--color-border);
+}
+
+.cardAction {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.25rem;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 2px 8px rgba(212, 160, 23, 0.2);
+}
+
+
+.price {
+    text-align: right;
+}
+
+.currency {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-right: 0.25rem;
+}
+
+.amount {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.arrow {
+    color: var(--color-border);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--color-bg-alt);
+    border: 2px dashed var(--color-border);
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .cardAction {
+        gap: 0.75rem;
+    }
+
+    .amount {
+        font-size: 1.125rem;
+    }
+}
